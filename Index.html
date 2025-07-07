@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Linktree </title>
+<style>
+    * {margin: 0%; padding: 0%;} /*me elimino las viñetas*/
+
+          header {text-align: center;}
+          .profile-img {
+              width: 200px;
+              height: 200px;
+              border-radius: 50%;
+              margin-top: 75px;
+              margin-bottom: 25px;
+              border: 6px solid #00e0ff;
+              box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+              transition: transform 0.4s, box-shadow 0.4s, border-color 0.4s, filter 0.4s;
+              object-fit: cover;
+              background: linear-gradient(135deg, #00e0ff 0%, #7f5fff 100%);
+              padding: 5px;
+              animation: fadeIn 1.2s;
+              position: relative;
+              z-index: 1;
+          }
+          .profile-img::after {
+              content: "";
+              position: absolute;
+              top: -8px; left: -8px; right: -8px; bottom: -8px;
+              border-radius: 50%;
+              z-index: -1;
+              background: conic-gradient(from 0deg, #00e0ff, #7f5fff, #00e0ff 100%);
+              filter: blur(6px) brightness(1.2);
+              opacity: 0.7;
+              animation: rainbowBorder 2.5s linear infinite;
+          }
+          .profile-img:hover {
+              transform: scale(1.08) rotate(-2deg);
+              box-shadow: 0 16px 40px 0 #00e0ff99, 0 0 32px 8px #7f5fff88;
+              border-color: #7f5fff;
+              filter: drop-shadow(0 0 16px #00e0ff) drop-shadow(0 0 32px #7f5fff);
+          }
+          @keyframes rainbowBorder {
+              0% { filter: blur(6px) brightness(1.2) hue-rotate(0deg); }
+              100% { filter: blur(6px) brightness(1.2) hue-rotate(360deg); }
+          }
+          @keyframes fadeIn {
+              0% { opacity: 0; transform: scale(0.8); }
+              100% { opacity: 1; transform: scale(1); }
+          }
+    header ul li {display: inline;}
+    .icon-social {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        margin: 0 10px;
+        object-fit: cover;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+        transition: transform 0.2s, box-shadow 0.2s;
+        vertical-align: middle;
+    }
+    .icon-social:hover {
+        transform: scale(1.15) rotate(-5deg);
+        box-shadow: 0 4px 16px rgba(0,0,0,0.25);
+    }
+              a  {text-decoration: none;}
+        
+             nav {text-align: center; margin-top: 50px;}
+       nav ul li {margin-bottom: 40px;}
+     nav ul li a {
+         background: linear-gradient(90deg, #00e0ff 0%, #7f5fff 100%);
+         color: #fff;
+         padding: 10px 100px;
+         border-radius: 20px;
+         font-weight: bold;
+         box-shadow: 0 2px 12px rgba(0,0,0,0.10);
+         transition: background 0.3s, color 0.3s, box-shadow 0.3s;
+     }
+     nav ul li a:hover {
+         background: linear-gradient(90deg, #7f5fff 0%, #00e0ff 100%);
+         color: #fff;
+         box-shadow: 0 4px 24px rgba(0,0,0,0.18);
+     }
+             div {text-align: center; margin-top: 30px;}
+          button {
+                  padding: 10px 100px; border-radius: 20px;}
+         /* body {background-image: url(imagenes/gato.png);
+                  background-size: cover;} */ /* auto - contain - cover*/
+          #small {width: 100vw; height: 100vh;
+                  object-fit: cover; /*centra imagenes y videos*/
+                  position: absolute; 
+                  top: 0; left: 0;
+                  z-index: -1;} /*para que el video quede de fondo*/
+</style>
+</head>
+
+<body>
+    <header>
+        <img src="Imagenes/gato.png" class="profile-img" alt="Foto de perfil Eric Olivares">
+        <h1>Eric Olivares</h1>
+        <h2 style="margin-bottom: 20px;">Tec. Químico</h2>
+        <ul class="redes">
+            <li>
+                <a href="https://www.instagram.com/" target="_blank">
+                    <img src="Imagenes/Logo Instagram.png" alt="Instagram" class="icon-social" title="Instagram">
+                </a>
+            </li>
+            <li>
+                <a href="https://x.com/?lang=es" target="_blank">
+                    <img src="Imagenes/Logo X.png" alt="X" class="icon-social" title="X">
+                </a>
+            </li>
+            <li>
+                <a href="https://www.facebook.com/" target="_blank">
+                    <img src="Imagenes/Logo Facebook.png" alt="Facebook" class="icon-social" title="Facebook">
+                </a>
+            </li>
+            <li>
+                <a href="https://www.youtube.com/">
+                    <img src="Imagenes/Logo YouTube.png" alt="Youtube" class="icon-social" title="Youtube">
+                </a>
+            </li>
+            <li>
+                <a href="https://www.linkedin.com/" target="_blank">
+                    <img src="Imagenes/Logo LinkedIn.png" alt="LinkedIn" class="icon-social" title="LinkedIn">
+                </a>
+            </li>
+        </ul>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="4.0) Nav Inicio.html">🛰️ IDENTIKIT</a></li>
+            <li><a href="BLOG 1.html">🛸 MI BLOG</a></li>
+            <li><a href="Porfolio.html">🚀 PORFOLIO</a></li>
+        </ul>
+    </nav>
+    <!-- <div>
+        <button><a href="" target="_blank">LINK</a></button>
+        <button><a href="" target="_blank">LINK</a></button>
+    </div> -->
+    <video id="small" autoplay loop muted>
+        <source src="imagenes/small.mp4" type="video/mp4"> 
+    </video>
+</body>
+</html>
